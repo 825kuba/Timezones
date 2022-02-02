@@ -1,0 +1,18 @@
+// resets, variables
+@import 'base.scss';
+
+// MAIN LAYOUT
+@import 'layouts/container';
+
+// LAYOUTS OF MAIN PARTS
+@import 'layouts/header';
+@import 'layouts/cards';
+@import 'layouts/footer';
+
+// COMPONENTS
+@import 'components/logo';
+@import 'components/card';
+@import 'components/clock';
+@import 'components/search-bar';
+@import 'components/modal';
+@import 'components/overlay';

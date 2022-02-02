@@ -1,0 +1,65 @@
+// CARD LAYOUT
+.cards {
+  font-size: 1.6rem;
+  padding: 3rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 4rem;
+  justify-items: center;
+  align-items: start;
+}
+
+// LOADING SPINNER
+.fa-spinner {
+  color: $color-4;
+  font-size: 5rem;
+  animation: rotate 2s linear infinite;
+}
+
+//SPINNER ANIMATION
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// ERROR MESSAGE
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+
+  &__buttons {
+    display: flex;
+    gap: 5rem;
+  }
+
+  &__btn {
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+
+    &--show {
+      background-color: $color-2;
+      color: $color-1;
+    }
+
+    &--reload {
+      background-color: $color-3;
+      color: $color-1;
+    }
+  }
+
+  &__details.hidden {
+    visibility: hidden;
+  }
+}

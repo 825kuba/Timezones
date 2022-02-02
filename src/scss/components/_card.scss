@@ -1,0 +1,64 @@
+.card {
+  width: 100%;
+  background-color: rgba($color-3, 0.1);
+  border-radius: 5px;
+  padding: 4rem 2rem 4rem 2rem;
+  position: relative;
+  text-align: center;
+  transition: all 0.2s ease;
+
+  //number elements in clock overflowing and causing scroll bar (due to rotation and 100% width)
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+
+  &__add {
+    color: $color-2;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.1s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__name {
+    & a:link,
+    & a:visited {
+      color: $color-2-dark;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    & a:hover,
+    & a:active {
+      text-decoration: underline;
+    }
+  }
+
+  &__time {
+    display: inline-block;
+  }
+
+  &__abbr:link,
+  &__abbr:visited {
+    font-weight: 500;
+    color: $color-2-dark;
+    text-decoration: none;
+  }
+
+  &__abbr:hover,
+  &__abbr:active {
+    text-decoration: underline;
+  }
+
+  &__offset {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,18 @@
+// OVERLAY USED TO COVER SCREEN WITH BLUR
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3px);
+  z-index: 400;
+
+  @media only screen and (min-width: $bp-medium) {
+    display: none;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}

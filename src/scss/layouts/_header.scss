@@ -1,0 +1,171 @@
+.header {
+  display: grid;
+  grid-template-rows: 1fr 5rem;
+  align-content: center;
+  background-color: $color-3;
+
+  //NAVIGATION PANEL
+
+  &__nav {
+    grid-row: 1;
+    padding: 0 2rem;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+
+    @media only screen and (min-width: $bp-large) {
+      padding: 0 4rem;
+    }
+  }
+
+  // TBN FOR MOBILE NAVIGATION
+
+  &__nav-btn {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+
+    @media only screen and (min-width: $bp-medium) {
+      display: none;
+    }
+
+    // BARS OF BTN
+
+    & .bar {
+      position: relative;
+      width: 2rem;
+      border-bottom: 2px solid $color-1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -0.6rem;
+        width: 2rem;
+        border-bottom: 2px solid $color-1;
+        transition: 0.15s ease-in;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0.6rem;
+        width: 2rem;
+        border-bottom: 2px solid $color-1;
+        transition: 0.15s ease-in;
+      }
+    }
+
+    &.open {
+      & .bar {
+        &::before {
+          content: '';
+          top: 0;
+        }
+
+        &::after {
+          content: '';
+          top: 0;
+        }
+      }
+    }
+  }
+
+  // NAV LINKS
+
+  &__links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: fit-content;
+    background-color: $color-3;
+    z-index: 500;
+    padding: 10rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 2rem;
+    transition: 0.15s ease-in;
+
+    @media only screen and (min-width: $bp-medium) {
+      position: static;
+      width: unset;
+      height: unset;
+      padding: 0;
+      background-color: transparent;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.hidden {
+      left: -100vw;
+
+      @media only screen and (min-width: $bp-medium) {
+        left: unset;
+      }
+    }
+  }
+
+  &__list-item {
+    list-style: none;
+    width: max-content;
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: $color-1;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+
+  &__link:active,
+  &__link:hover {
+    color: $color-2;
+  }
+
+  // MY PLACES BTN
+  &__link--my-places {
+    position: relative;
+
+    & .fa-star {
+      z-index: 200;
+      position: relative;
+    }
+
+    // NUMBER DISPLAYED NEXT TO BTN TO INDICATE HOW MANY FAVOURITES ARE ADDED
+    & .num-badge {
+      background: $color-5-light;
+      color: $color-4;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+
+      position: absolute;
+      z-index: 100;
+      transform: translate(-50%, -50%);
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+
+  & .search-bar {
+    grid-row: 2;
+  }
+}
