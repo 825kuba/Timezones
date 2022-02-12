@@ -4,23 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONT AWESOME ICONS -->
     <script
       defer
       src="https://kit.fontawesome.com/9d54c6adde.js"
       crossorigin="anonymous"
     ></script>
+
     <script defer type="module" src="./js/controller.js"></script>
     <link rel="stylesheet" href="./scss/main.scss" />
     <title>Document</title>
   </head>
   <body class="container">
     <header class="header">
+
       <nav class="header__nav">
 
+        <!-- MOBILE NAVIGATION BUTTON -->
         <div class="header__nav-btn">
           <div class="bar"></div>
         </div>
-
+        
+        <!-- NAVIGATION LINKS -->
         <ul class="header__links hidden">
 
           <li class="header__list-item">
@@ -32,7 +37,7 @@
 
           <li class="header__list-item">
             <a
-              href="https://jakub-weather.netlify.app/"
+              href="https://jh-weather.netlify.app/"
               target="_blank"
               class="header__link"
               >Weather</i
@@ -46,16 +51,22 @@
         </div>  
       </nav>
 
+      <!-- SEARCH BAR -->
       <form action="#" class="search-bar">
         <button
           class="search-bar__btn search-bar__btn--location"
           type="button"
           title="Get my location"
         >
+
+        <!-- POSITION BUTTON -->
           <i class="fas fa-map-marker-alt"></i>
         </button>
 
+        <!-- SEARCH FIELD -->
         <div class="search-bar__location">
+
+          <!-- SPINNER USED WHEN LOCAL STORAGE DOESN'T HAVE THE LIST OF ALL PLACES YET -->
           <i class="search-bar__spinner hidden fas fa-spinner"></i>
           <input
             placeholder="Search..."
@@ -67,6 +78,7 @@
           <datalist id="locations"></datalist>
         </div>
 
+        <!-- SEARCH BUTTON -->
         <button
           type="submit"
           class="search-bar__btn search-bar__btn--search"
@@ -78,31 +90,19 @@
 
     </header>
     <main class="main">
+      <!-- ALL THE CARDS ARE DISPLAYED HERE -->
       <section class="cards"></section>
     </main>
     <footer class="footer">
-      <div class="footer__contact">
-
-        <div class="footer__logo logo">
-          <span><i class="fas fa-history"></i></span>
-          <h1>Timezones</h1>
-        </div>
-
         <p class="footer__dev">
           Made by Jakub Horuta
           <a target="_blank" href="https://github.com/825kuba"
             ><img src="./img/GitHub-Mark-Light-32px.png" alt="Github logo"
           /></a>
         </p>
-
-        <p class="footer__api">
-          All the data come from the
-          <a target="_blank" href="https://timezonedb.com/">TimeZoneDB</a>
-        </p>
-
-      </div>
     </footer>
 
+    <!-- ERROR MESSAGE WHEN USER TRIES TO ADD MORE THEN 2 PLACES -->
     <div class="modal hidden">
 
       <p class="modal__text">
@@ -112,6 +112,7 @@
       <button class="modal__close">&times;</button>
       
     </div>
+    <!-- OVERLAY FOR MOBILE MENU -->
     <div class="overlay hidden"></div>
   </body>
 </html>

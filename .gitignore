@@ -1,5 +1,6 @@
 node_modules
 .parcel-cache
 dist
-api-key.js
+.prettierrc
 to-do.txt
+.env

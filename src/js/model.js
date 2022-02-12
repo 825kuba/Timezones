@@ -1,6 +1,6 @@
 'use strict';
 
-import API_KEY from './../../api-key.js';
+// require('dotenv').config();
 
 //VARIABLE USED FOR STORING DATA
 export let state = {
@@ -13,9 +13,7 @@ export let state = {
 //GET A LIST OF ALL TIME ZONES
 export const getAllTimeZones = async function () {
   try {
-    const response = await fetch(
-      `http://api.timezonedb.com/v2.1/list-time-zone?key=${API_KEY}&format=json`
-    );
+    const response = await fetch(`/.netlify/functions/fetch-time`);
     if (!response.ok) throw new Error(`${response.status}`);
     const data = await response.json();
     return data;
@@ -42,7 +40,7 @@ export const getUsersPosition = function () {
 export const getDataByPosition = async function (lat, lng) {
   try {
     const response = await fetch(
-      `http://api.timezonedb.com/v2.1/get-time-zone?key=${API_KEY}&format=json&by=position&lat=${lat}&lng=${lng}`
+      `/.netlify/functions/fetch-time?lat=${lat}&lng=${lng}`
     );
     if (!response.ok) throw new Error(`${response.status}`);
     const data = await response.json();
@@ -56,7 +54,7 @@ export const getDataByPosition = async function (lat, lng) {
 export const getDataBySearch = async function (timezone) {
   try {
     const response = await fetch(
-      `http://api.timezonedb.com/v2.1/get-time-zone?key=${API_KEY}&format=json&by=zone&zone=${timezone}`
+      `/.netlify/functions/fetch-time?timezone=${timezone}`
     );
     if (!response.ok) throw new Error(`${response.status}`);
     const data = await response.json();

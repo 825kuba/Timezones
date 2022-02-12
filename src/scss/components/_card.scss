@@ -1,3 +1,4 @@
+// CARD LAYOUT
 .card {
   width: 100%;
   background-color: rgba($color-3, 0.1);
@@ -16,6 +17,8 @@
   align-items: center;
   gap: 0.5rem;
 
+  //ADD TO FAVOURITES BTN
+
   &__add {
     color: $color-2;
     cursor: pointer;
@@ -27,6 +30,7 @@
     }
   }
 
+  //NAME OF COUNTRY AND CITY / AREA
   &__name {
     & a:link,
     & a:visited {
@@ -41,10 +45,12 @@
     }
   }
 
+  // TIME IN PRINT
   &__time {
     display: inline-block;
   }
 
+  // ABBREVATION OF TIMEZONE NAME
   &__abbr:link,
   &__abbr:visited {
     font-weight: 500;
@@ -57,6 +63,7 @@
     text-decoration: underline;
   }
 
+  // UTC OFFSET
   &__offset {
     font-size: 1.6rem;
     font-weight: 400;

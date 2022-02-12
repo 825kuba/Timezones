@@ -20,7 +20,7 @@
     }
   }
 
-  // TBN FOR MOBILE NAVIGATION
+  // BTN FOR MOBILE NAVIGATION
 
   &__nav-btn {
     width: 2rem;
@@ -36,7 +36,7 @@
       display: none;
     }
 
-    // BARS OF BTN
+    // BARS OF THE MOBILE MENU BTN
 
     & .bar {
       position: relative;
@@ -62,6 +62,7 @@
       }
     }
 
+    // MOVEMENT OF BARS WHEN BTN IS CLICKED
     &.open {
       & .bar {
         &::before {

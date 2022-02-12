@@ -12,6 +12,11 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
+    "netlify-cli": "^9.4.0",
     "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "dotenv": "^16.0.0"
   }
 }

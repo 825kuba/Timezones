@@ -18,7 +18,7 @@ export class CardView {
   constructor(countryName, zoneName, formatted, gmtOffset, abbreviation) {
     this.countryName = formatCountryName(countryName);
     this.zoneName = zoneName;
-    this.formatted = formatted; //local time
+    this.formatted = formatted.replaceAll('-', '/'); //local time
     this.gmtOffset = gmtOffset;
     this.abbreviation = abbreviation;
 
@@ -103,10 +103,10 @@ export class CardView {
           </div>
 
          <div>
-          <h2 class="card__time">${this.day} ${addZero(this.hours)}:${addZero(
+         <h2 class="card__time">${this.day} ${addZero(this.hours)}:${addZero(
         this.minutes
-      )}:${addZero(this.seconds)}</h2> 
-           <a class="card__abbr" href="https://www.timeanddate.com/time/zones/${this.abbreviation.toLowerCase()}" target="_blank">${
+      )}:${addZero(this.seconds)}</h2>
+               <a class="card__abbr" href="https://www.timeanddate.com/time/zones/${this.abbreviation.toLowerCase()}" target="_blank">${
         this.abbreviation
       }</a>
         </div>
