@@ -102,7 +102,7 @@ const controlAddCard = function (card) {
 };
 
 // CONTROL OPENING MY PLACES
-controlMyPlaces = async function () {
+const controlMyPlaces = async function () {
   try {
     // IF THERE IS NOT SAVED PLACES, RETURN
     if (!model.state.cards.length) return;
@@ -144,7 +144,7 @@ const cardInit = function (card) {
 // BASIC INIT FUNCTION
 function init() {
   model.getState();
-  // controlTimeZoneByPosition();
+  controlTimeZoneByPosition();
   searchView.addHandlerSearchList(controlSearchList);
   searchView.addHandlerSearch(controlSearch);
   searchView.addHandlerPosition(controlTimeZoneByPosition);
